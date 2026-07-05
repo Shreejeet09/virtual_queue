@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Dashboard | Smart Queue</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="admin-body">
+  <aside class="sidebar">
+    <h2>Smart Queue</h2>
+    <p>Admin Dashboard</p>
+    <a href="index.html">Home</a>
+    <a href="user.html">User Page</a>
+  </aside>
+
+  <main class="admin-main">
+    <header class="admin-header">
+      <div>
+        <h1>Queue Control Panel</h1>
+        <p>Call, serve, skip, and manage live tokens.</p>
+      </div>
+      <button class="btn danger" onclick="resetQueue()">Reset Queue</button>
+    </header>
+
+    <section class="dashboard-grid">
+      <div class="stat-card">
+        <p>Current Token</p>
+        <h2 id="currentToken">None</h2>
+      </div>
+      <div class="stat-card">
+        <p>Waiting</p>
+        <h2 id="waitingCount">0</h2>
+      </div>
+      <div class="stat-card">
+        <p>Served</p>
+        <h2 id="servedCount">0</h2>
+      </div>
+      <div class="stat-card">
+        <p>Skipped</p>
+        <h2 id="skippedCount">0</h2>
+      </div>
+    </section>
+
+    <section class="control-card">
+      <h2>Controls</h2>
+      <div class="control-buttons">
+        <button class="btn primary" onclick="callNextToken()">Call Next Token</button>
+        <button class="btn secondary" onclick="markServed()">Mark Served</button>
+        <button class="btn warning" onclick="skipCurrent()">Skip Current</button>
+      </div>
+    </section>
+
+    <section class="table-card">
+      <div class="table-header">
+        <h2>Live Queue</h2>
+        <span id="lastUpdated">Updated now</span>
+      </div>
+      <table>
+        <thead>
+          <tr>
+            <th>Token</th>
+            <th>Name</th>
+            <th>Phone</th>
+            <th>Purpose</th>
+            <th>Status</th>
+            <th>Time</th>
+          </tr>
+        </thead>
+        <tbody id="queueTable"></tbody>
+      </table>
+    </section>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
