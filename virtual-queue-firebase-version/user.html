@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>User Queue</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="mobile-body">
+  <main class="mobile-shell">
+    <section class="app-header">
+      <h1>Virtual Queue</h1>
+      <p>Take your token and wait for your turn alert.</p>
+    </section>
+
+    <section class="token-card">
+      <p class="label">Your Token</p>
+      <h2 id="myToken">--</h2>
+      <p id="statusText">Tap below to generate your queue token.</p>
+    </section>
+
+    <section class="live-card">
+      <div>
+        <span>Now Serving</span>
+        <strong id="currentToken">--</strong>
+      </div>
+      <div>
+        <span>People Waiting</span>
+        <strong id="waitingCount">0</strong>
+      </div>
+    </section>
+
+    <button id="takeTokenBtn" class="btn primary full">Take Token</button>
+    <button id="clearMyTokenBtn" class="btn light full">Clear My Token</button>
+
+    <p class="small-note">Keep this page open to see live updates.</p>
+  </main>
+
+  <script type="module" src="user.js"></script>
+</body>
+</html>
